@@ -1,27 +1,34 @@
-//criar variáveis
+var Stitch, StitchImg;
 
-
-
-
-//função que carrega imagens
+function preload()
 {
-    //carregar imagens
+    StitchImg = loadAnimation("img/Stitch.jpeg");
 }
 
-
-//função que inicializa o arquivo
+function setup()
 {
-    //cria tamanho do fundo da tela
-    //criar sprites
-    //carregar imagem
-    //colocar tamanho
+    createCanvas(1350,650);
+    Stitch = createSprite(700,100);
+    Stitch.addAnimation("Stitch",StitchImg);
+    Stitch.scale = 0.9;
+    
 }
 
-
-//função que executa o programa até que seja parado
+function draw()
 {
-    //colocar cor de fundo
-    //condição para pular
-    //exibir texto de instrução
-    //comando que desenha sprites
+    background("#9ACAE7");
+
+        if(keyDown("space"))
+
+        {
+            Stitch.velocityY = -8;
+        }
+            
+            Stitch.velocityY = Stitch.velocityY + 0.1;
+            
+         
+        fill("black"); //cor da letra
+        text("Estudar é o caminho para o sucesso.",600, 200);
+    
+    drawSprites();
 }
